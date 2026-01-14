@@ -5,7 +5,7 @@ const services = [
   {
     id: 0,
     title: "Landing Page",
-    price: "250",
+    price: "150",
     description: "Ideal para captar clientes rápidamente con una oferta específica.",
     features: ["Diseño 100% Responsive", "Optimización SEO básica", "Botón de WhatsApp directo", "Carga ultra rápida"],
     icon: <FiSmartphone className="text-3xl" />
@@ -13,7 +13,7 @@ const services = [
   {
     id: 1,
     title: "Business Web",
-    price: "500",
+    price: "450",
     description: "Tu empresa al siguiente nivel con presencia profesional y datos reales.",
     features: ["Hasta 5 secciones", "Google Analytics integrado", "Formularios de contacto", "Velocidad de carga Premium"],
     icon: <FiLayout className="text-3xl" />,
