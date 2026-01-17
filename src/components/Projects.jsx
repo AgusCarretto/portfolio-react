@@ -63,12 +63,19 @@ const projectData = [
     img: imgEnfermeria,
     link: "https://enfermeria-domiciliaria.vercel.app/", 
   },
-  {
-    title: "E-commerce Personalizado",
-    desc: "Tienda online moderna y escalable, con integración de pasarela de pagos.",
-    tech: ["Next.js", "Stripe", "MongoDB"],
-    img: "https://dummyimage.com/800x450/0f172a/22d3ee.png&text=Proyecto+en+Camino",
-    link: "#", 
+   {
+    title: "MK3 Hierros - Ecosistema Full-Stack",
+    desc: "Sistema integral de gestión para herrería. Incluye App móvil administrativa (Android) para carga de trabajos y Landing Page para visualización de catálogo en tiempo real.",
+    tech: [
+      "React Native", 
+      "React.js",
+      "NestJS",
+      "TypeScript",
+      "PostgreSQL",
+      "TypeORM"
+    ],
+    img: imgMk3,
+    link: "https://aguscarretto.github.io/MK3_Hierros/",
   },
   {
     title: "Dashboard SaaS",
@@ -161,14 +168,14 @@ export const Projects = () => {
                 <h3 className="text-xl font-bold text-white mb-2">
                   {project.title}
                 </h3>
-                <p className="text-xs text-slate-400 leading-relaxed mb-5 line-clamp-2">
+                <p className="text-xs text-slate-400 leading-relaxed mb-5 line-clamp-2 hover:line-clamp-none">
                   {project.desc}
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 overflow-hidden transition-all duration-500 group-hover:h-auto mt-4">
                   {project.tech.map((t) => (
                     <span
                       key={t}
-                      className="text-[9px] px-2 py-1 bg-slate-800/50 text-cyan-400 rounded-md border border-slate-700 font-mono"
+                      className="text-[9px] px-2 py-1 bg-slate-800/50 text-cyan-400 rounded-md border border-slate-700 font-mono "
                     >
                       {t}
                     </span>
