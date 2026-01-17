@@ -17,37 +17,43 @@ import "swiper/css/effect-coverflow"; // Para un efecto visual más cool
 
 // Tus imágenes de proyectos
 import imgEnfermeria from "../assets/img-projects/img-enfer.png";
-// Asumo que tienes otras imágenes o un placeholder para los futuros
-//import imgEcommerce from '../assets/img-projects/img-ecommerce-placeholder.png'; // Crea esta imagen o usa un placeholder
-//import imgSaaS from '../assets/img-projects/img-saas-placeholder.png'; // Crea esta imagen o usa un placeholder
+import imgMk3 from "../assets/img-projects/img-mk3.png";
+
 
 const projectData = [
   {
     title: "Gestión de Enfermería",
-    desc: "Plataforma web para gestión de pacientes y turnos en centros de salud.",
+    desc: "Plataforma web que muestra los servicios de una enfermeria domiciliaria.",
     tech: ["React", "TailwindCSS", "Firebase"],
     img: imgEnfermeria,
-    link: "https://enfermeria-domiciliaria.vercel.app/", // Link real a tu proyecto
+    link: "https://enfermeria-domiciliaria.vercel.app/", 
   },
   {
-    title: "E-commerce Personalizado",
-    desc: "Tienda online moderna y escalable, con integración de pasarela de pagos.",
-    tech: ["Next.js", "Stripe", "MongoDB"],
-    img: "https://dummyimage.com/800x450/0f172a/22d3ee.png&text=Proyecto+en+Camino",
-    link: "#", // Link real a tu proyecto
+    title: "MK3 Hierros - Ecosistema Full-Stack",
+    desc: "Sistema integral de gestión para herrería. Incluye App móvil administrativa (Android) para carga de trabajos y Landing Page para visualización de catálogo en tiempo real.",
+    tech: [
+      "React Native", 
+      "React.js",
+      "NestJS",
+      "TypeScript",
+      "PostgreSQL",
+      "TypeORM"
+    ],
+    img: imgMk3,
+    link: "https://aguscarretto.github.io/MK3_Hierros/",
   },
   {
     title: "Dashboard SaaS",
     desc: "Panel de control administrativo con visualización de datos en tiempo real.",
     tech: ["TypeScript", "Node.js", "AWS"],
     img: "https://placehold.jp/24/0f172a/22d3ee/800x450.png?text=Próximamente...",
-    link: "#", // Link real a tu proyecto
+    link: "#", 
   },
   {
     title: "Próximo Proyecto",
     desc: "Explorando soluciones innovadoras para el sector educativo.",
     tech: ["Vue.js", "GraphQL"],
-    img: "https://placehold.jp/24/0f172a/22d3ee/800x450.png?text=En desarrollo...", // Placeholder
+    img: "https://placehold.jp/24/0f172a/22d3ee/800x450.png?text=En desarrollo...", 
     link: "#",
   },
   {
@@ -55,27 +61,27 @@ const projectData = [
     desc: "Plataforma web para gestión de pacientes y turnos en centros de salud.",
     tech: ["React", "TailwindCSS", "Firebase"],
     img: imgEnfermeria,
-    link: "https://enfermeria-domiciliaria.vercel.app/", // Link real a tu proyecto
+    link: "https://enfermeria-domiciliaria.vercel.app/", 
   },
   {
     title: "E-commerce Personalizado",
     desc: "Tienda online moderna y escalable, con integración de pasarela de pagos.",
     tech: ["Next.js", "Stripe", "MongoDB"],
     img: "https://dummyimage.com/800x450/0f172a/22d3ee.png&text=Proyecto+en+Camino",
-    link: "#", // Link real a tu proyecto
+    link: "#", 
   },
   {
     title: "Dashboard SaaS",
     desc: "Panel de control administrativo con visualización de datos en tiempo real.",
     tech: ["TypeScript", "Node.js", "AWS"],
     img: "https://placehold.jp/24/0f172a/22d3ee/800x450.png?text=Próximamente...",
-    link: "#", // Link real a tu proyecto
+    link: "#", 
   },
   {
     title: "Próximo Proyecto",
     desc: "Explorando soluciones innovadoras para el sector educativo.",
     tech: ["Vue.js", "GraphQL"],
-    img: "https://placehold.jp/24/0f172a/22d3ee/800x450.png?text=En desarrollo...", // Placeholder
+    img: "https://placehold.jp/24/0f172a/22d3ee/800x450.png?text=En desarrollo...", 
     link: "#",
   },
 ];
