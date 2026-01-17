@@ -19,25 +19,24 @@ import "swiper/css/effect-coverflow"; // Para un efecto visual más cool
 import imgEnfermeria from "../assets/img-projects/img-enfer.png";
 import imgMk3 from "../assets/img-projects/img-mk3.png";
 
-
 const projectData = [
   {
     title: "Gestión de Enfermería",
     desc: "Plataforma web que muestra los servicios de una enfermeria domiciliaria.",
     tech: ["React", "TailwindCSS", "Firebase"],
     img: imgEnfermeria,
-    link: "https://enfermeria-domiciliaria.vercel.app/", 
+    link: "https://enfermeria-domiciliaria.vercel.app/",
   },
   {
     title: "MK3 Hierros - Ecosistema Full-Stack",
-    desc: "Sistema integral de gestión para herrería. Incluye App móvil administrativa (Android) para carga de trabajos y Landing Page para visualización de catálogo en tiempo real.",
+    desc: "Sistema de gestión para herrería. Incluye App móvil administrativa (Android) para carga de trabajos y Landing Page.",
     tech: [
-      "React Native", 
+      "React Native",
       "React.js",
       "NestJS",
       "TypeScript",
       "PostgreSQL",
-      "TypeORM"
+      "TypeORM",
     ],
     img: imgMk3,
     link: "https://aguscarretto.github.io/MK3_Hierros/",
@@ -47,13 +46,13 @@ const projectData = [
     desc: "Panel de control administrativo con visualización de datos en tiempo real.",
     tech: ["TypeScript", "Node.js", "AWS"],
     img: "https://placehold.jp/24/0f172a/22d3ee/800x450.png?text=Próximamente...",
-    link: "#", 
+    link: "#",
   },
   {
     title: "Próximo Proyecto",
     desc: "Explorando soluciones innovadoras para el sector educativo.",
     tech: ["Vue.js", "GraphQL"],
-    img: "https://placehold.jp/24/0f172a/22d3ee/800x450.png?text=En desarrollo...", 
+    img: "https://placehold.jp/24/0f172a/22d3ee/800x450.png?text=En desarrollo...",
     link: "#",
   },
   {
@@ -61,18 +60,18 @@ const projectData = [
     desc: "Plataforma web para gestión de pacientes y turnos en centros de salud.",
     tech: ["React", "TailwindCSS", "Firebase"],
     img: imgEnfermeria,
-    link: "https://enfermeria-domiciliaria.vercel.app/", 
+    link: "https://enfermeria-domiciliaria.vercel.app/",
   },
-   {
+  {
     title: "MK3 Hierros - Ecosistema Full-Stack",
-    desc: "Sistema integral de gestión para herrería. Incluye App móvil administrativa (Android) para carga de trabajos y Landing Page para visualización de catálogo en tiempo real.",
+    desc: "Sistema de gestión para herrería. Incluye App móvil administrativa (Android) para carga de trabajos y Landing Page.",
     tech: [
-      "React Native", 
+      "React Native",
       "React.js",
       "NestJS",
       "TypeScript",
       "PostgreSQL",
-      "TypeORM"
+      "TypeORM",
     ],
     img: imgMk3,
     link: "https://aguscarretto.github.io/MK3_Hierros/",
@@ -82,13 +81,13 @@ const projectData = [
     desc: "Panel de control administrativo con visualización de datos en tiempo real.",
     tech: ["TypeScript", "Node.js", "AWS"],
     img: "https://placehold.jp/24/0f172a/22d3ee/800x450.png?text=Próximamente...",
-    link: "#", 
+    link: "#",
   },
   {
     title: "Próximo Proyecto",
     desc: "Explorando soluciones innovadoras para el sector educativo.",
     tech: ["Vue.js", "GraphQL"],
-    img: "https://placehold.jp/24/0f172a/22d3ee/800x450.png?text=En desarrollo...", 
+    img: "https://placehold.jp/24/0f172a/22d3ee/800x450.png?text=En desarrollo...",
     link: "#",
   },
 ];
@@ -96,7 +95,6 @@ const projectData = [
 export const Projects = () => {
   return (
     <section id="proyectos" className="py-24 max-w-6xl mx-auto px-6">
-      {/* Título de la sección */}
       <div className="mb-16 text-center">
         <h2 className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent inline-block">
           Mis Proyectos
@@ -108,23 +106,26 @@ export const Projects = () => {
         <div className="h-1 w-20 bg-cyan-500 mt-4 mx-auto rounded-full"></div>
       </div>
 
-      {/* SWIPER CONTAINER */}
       <Swiper
-        // Módulos que vamos a usar
         modules={[Navigation, Pagination, EffectCoverflow, Autoplay]}
-        // Configuración responsive para mostrar 1, 2 o 3 slides
+        //esto es para la parte responsive
         breakpoints={{
           320: {
-            slidesPerView: 1,
-            spaceBetween: 0, // Quitamos el espacio para que no asomen los costados
+            slidesPerView: 0.85, 
+            spaceBetween: 50,
             centeredSlides: true,
+            coverflowEffect: {
+              rotate: 0, // Sin rotación en móvil para que sea legible
+              depth: 50, // Menos profundidad
+              modifier: 1,
+            },
           },
-          768: { slidesPerView: 2, spaceBetween: 30 },
+          768: { slidesPerView: 2, spaceBetween: 40 },
           1024: { slidesPerView: 3, spaceBetween: 40 },
         }}
-        loop={true} // Para que el slider sea infinito
-        centeredSlides={true} // Para que el slide activo esté en el centro
-        effect={"coverflow"} // Un efecto visual muy atractivo
+        loop={true}
+        centeredSlides={true}
+        effect={"coverflow"}
         coverflowEffect={{
           rotate: 50,
           stretch: 0,
@@ -132,19 +133,29 @@ export const Projects = () => {
           modifier: 1,
           slideShadows: true,
         }}
-        navigation={true} // Flechas de navegación
-        //pagination={{ clickable: false }} // Puntos de paginación. No lo quiero hasta tener mas proyectos
+        navigation={true} //Flechas de los costados
         autoplay={{
-          delay: 3000, // Cada cuánto se mueve automáticamente
-          disableOnInteraction: false, // No se detiene si el usuario interactúa
+          delay: 3500, // Movimiento de cada cuánto se mueve automáticamente
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true, //se detiene en el hover
         }}
-        className="mySwiper !pb-12 !pt-4 !px-12" // Añadimos padding para la paginación
+        className="mySwiper !pb-12 !pt-4 !px-12"
       >
         {projectData.map((project, index) => (
           <SwiperSlide key={index} className="flex justify-center">
-            <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden isolation-isolate relative group hover:border-cyan-500/50 shadow-2xl max-w-[380px] w-full">
+            <div
+              className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden isolation-isolate relative group hover:border-cyan-500/50 shadow-2xl max-w-[380px] w-full"
+              //Cuando entra el mouse quiero que se detenga el timer del swiper. Al expandirse la targeta el pauseOnMouseEnter no funcionaba
+              onMouseEnter={(e) => {
+                const swiper = e.currentTarget.closest(".swiper").swiper;
+                swiper.autoplay.stop();
+              }}
+              onMouseLeave={(e) => {
+                const swiper = e.currentTarget.closest(".swiper").swiper;
+                swiper.autoplay.start();
+              }}
+            >
               <div className="aspect-video relative overflow-hidden">
-                {/* Imagen con scale */}
                 <img
                   src={project.img}
                   alt={project.title}
@@ -163,19 +174,22 @@ export const Projects = () => {
                   </span>
                 </a>
               </div>
-
               <div className="p-6">
                 <h3 className="text-xl font-bold text-white mb-2">
                   {project.title}
                 </h3>
-                <p className="text-xs text-slate-400 leading-relaxed mb-5 line-clamp-2 hover:line-clamp-none">
-                  {project.desc}
-                </p>
-                <div className="flex flex-wrap gap-2 overflow-hidden transition-all duration-500 group-hover:h-auto mt-4">
+                <div className="relative">
+                  <p className="text-xs text-slate-400 leading-relaxed overflow-hidden transition-all duration-500 ease-in-out max-h-25 md:max-h-10 group-hover:max-h-40 md:group-hover:max-h-32">
+                    {project.desc}
+                  </p>
+
+                  <div className="absolute bottom-0 left-0 w-full h-4 bg-gradient-to-t from-slate-900 to-transparent group-hover:opacity-0 transition-opacity duration-500 md:block hidden"></div>
+                </div>
+                <div className="mt-4 flex flex-wrap gap-2 overflow-hidden transition-all duration-500 ease-in-out max-h-16 md:max-h-7 group-hover:max-h-32 md:group-hover:max-h-24">
                   {project.tech.map((t) => (
                     <span
                       key={t}
-                      className="text-[9px] px-2 py-1 bg-slate-800/50 text-cyan-400 rounded-md border border-slate-700 font-mono "
+                      className="text-[9px] px-2 py-1 bg-slate-800/50 text-cyan-400 rounded-md border border-slate-700 font-mono"
                     >
                       {t}
                     </span>
@@ -190,6 +204,7 @@ export const Projects = () => {
       {/*CSS PARA ACOMODAR ALGUNAS COSAS*/}
 
       {/* AJUSTES DE FLECHAS Y MÓVIL */}
+
       <style>{`
   /* --- ESTILO GENERAL (PC) --- */
   .swiper-button-next, .swiper-button-prev {
@@ -206,11 +221,12 @@ export const Projects = () => {
 
   /* --- AJUSTE EXCLUSIVO PARA MÓVIL --- */
   @media (max-width: 768px) {
+ 
     .mySwiper {
-    padding-left: 20px !important;
-      padding-right: 20px !important;
-     
-    }
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    padding-bottom: 50px !important;
+  }
 
     .swiper-button-prev {
       

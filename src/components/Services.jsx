@@ -22,7 +22,7 @@ const services = [
   {
     id: 2,
     title: "Custom App / Sistema",
-    price: "900",
+    price: "1300",
     description: "Soluciones a medida para automatizar y gestionar tu negocio.",
     features: ["Base de datos en tiempo real", "Gestión de usuarios / Login", "Panel de administración", "Soporte técnico prioritario"],
     icon: <FiDatabase className="text-3xl" />
