@@ -1,7 +1,6 @@
 import React from "react";
-// Importa los componentes de Swiper
+import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-// Importa los módulos de navegación y paginación
 import {
   Navigation,
   Pagination,
@@ -9,88 +8,12 @@ import {
   Autoplay,
 } from "swiper/modules";
 
-// Importa los estilos de Swiper (esenciales)
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/effect-coverflow"; // Para un efecto visual más cool
+import "swiper/css/effect-coverflow";
 
-// Tus imágenes de proyectos
-import imgEnfermeria from "../assets/img-projects/img-enfer.png";
-import imgMk3 from "../assets/img-projects/img-mk3.png";
-
-const projectData = [
-  {
-    title: "Gestión de Enfermería",
-    desc: "Plataforma web que muestra los servicios de una enfermeria domiciliaria.",
-    tech: ["React", "TailwindCSS", "Firebase"],
-    img: imgEnfermeria,
-    link: "https://enfermeria-domiciliaria.vercel.app/",
-  },
-  {
-    title: "MK3 Hierros - Ecosistema Full-Stack",
-    desc: "Sistema de gestión para herrería. Incluye App móvil administrativa (Android) para carga de trabajos y Landing Page.",
-    tech: [
-      "React Native",
-      "React.js",
-      "NestJS",
-      "TypeScript",
-      "PostgreSQL",
-      "TypeORM",
-    ],
-    img: imgMk3,
-    link: "https://aguscarretto.github.io/MK3_Hierros/",
-  },
-  {
-    title: "Dashboard SaaS",
-    desc: "Panel de control administrativo con visualización de datos en tiempo real.",
-    tech: ["TypeScript", "Node.js", "AWS"],
-    img: "https://placehold.jp/24/0f172a/22d3ee/800x450.png?text=Próximamente...",
-    link: "#",
-  },
-  {
-    title: "Próximo Proyecto",
-    desc: "Explorando soluciones innovadoras para el sector educativo.",
-    tech: ["Vue.js", "GraphQL"],
-    img: "https://placehold.jp/24/0f172a/22d3ee/800x450.png?text=En desarrollo...",
-    link: "#",
-  },
-  {
-    title: "Gestión de Enfermería",
-    desc: "Plataforma web para gestión de pacientes y turnos en centros de salud.",
-    tech: ["React", "TailwindCSS", "Firebase"],
-    img: imgEnfermeria,
-    link: "https://enfermeria-domiciliaria.vercel.app/",
-  },
-  {
-    title: "MK3 Hierros - Ecosistema Full-Stack",
-    desc: "Sistema de gestión para herrería. Incluye App móvil administrativa (Android) para carga de trabajos y Landing Page.",
-    tech: [
-      "React Native",
-      "React.js",
-      "NestJS",
-      "TypeScript",
-      "PostgreSQL",
-      "TypeORM",
-    ],
-    img: imgMk3,
-    link: "https://aguscarretto.github.io/MK3_Hierros/",
-  },
-  {
-    title: "Dashboard SaaS",
-    desc: "Panel de control administrativo con visualización de datos en tiempo real.",
-    tech: ["TypeScript", "Node.js", "AWS"],
-    img: "https://placehold.jp/24/0f172a/22d3ee/800x450.png?text=Próximamente...",
-    link: "#",
-  },
-  {
-    title: "Próximo Proyecto",
-    desc: "Explorando soluciones innovadoras para el sector educativo.",
-    tech: ["Vue.js", "GraphQL"],
-    img: "https://placehold.jp/24/0f172a/22d3ee/800x450.png?text=En desarrollo...",
-    link: "#",
-  },
-];
+import { projectData } from "../data/projectData";
 
 export const Projects = () => {
   return (
@@ -111,12 +34,12 @@ export const Projects = () => {
         //esto es para la parte responsive
         breakpoints={{
           320: {
-            slidesPerView: 0.85, 
+            slidesPerView: 0.85,
             spaceBetween: 50,
             centeredSlides: true,
             coverflowEffect: {
-              rotate: 0, // Sin rotación en móvil para que sea legible
-              depth: 50, // Menos profundidad
+              rotate: 0,
+              depth: 50,
               modifier: 1,
             },
           },
@@ -135,7 +58,7 @@ export const Projects = () => {
         }}
         navigation={true} //Flechas de los costados
         autoplay={{
-          delay: 3500, // Movimiento de cada cuánto se mueve automáticamente
+          delay: 3500,
           disableOnInteraction: false,
           pauseOnMouseEnter: true, //se detiene en el hover
         }}
@@ -162,17 +85,14 @@ export const Projects = () => {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
 
-                {/* CAPA OSCURA CORREGIDA */}
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center z-20 scale-[1.01] backface-hidden"
-                >
-                  <span className="px-5 py-2 bg-white text-slate-950 rounded-full font-bold text-[10px] uppercase tracking-widest shadow-lg">
-                    Ver Proyecto
-                  </span>
-                </a>
+                <div className="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center z-30">
+                  <Link
+                    to={`/proyecto/${project.id}`}
+                    className="px-5 py-2 bg-white text-slate-950 rounded-full font-bold text-[10px] uppercase tracking-widest shadow-lg relative z-50"
+                  >
+                    Ver Detalles
+                  </Link>
+                </div>
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-white mb-2">

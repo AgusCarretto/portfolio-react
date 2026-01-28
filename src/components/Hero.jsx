@@ -52,7 +52,6 @@ export const Hero = () => {
             </a>
           </div>
 
-          {/* ... todo el código que ya tenemos del titular y typewriter ... */}
         </div>
 
         {/* COLUMNA DERECHA: La Card de CV / Perfil */}
@@ -83,8 +82,8 @@ export const Hero = () => {
                 {/* Cambia esta parte en tu columna derecha */}
                 <div className="space-y-3 w-full">
                   <a
-                    href="/Agustin_Carretto_CV.pdf" // 1. AQUÍ PONES LA RUTA (debe estar en la carpeta public)
-                    download="Agustin_Carretto_CV.pdf" // 2. AQUÍ EL NOMBRE con el que se guardará en la PC
+                    href="/Agustin_Carretto_CV.pdf" 
+                    download="Agustin_Carretto_CV.pdf" 
                     className="flex items-center justify-center gap-2 w-full py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-xl transition-all border border-slate-700 cursor-pointer active:scale-95"
                   >
                     <span className="font-bold text-sm">Descargar CV</span>
