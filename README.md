@@ -1,7 +1,5 @@
 # 👨‍💻 Agustín Carretto - Portfolio Profesional
 
-![Banner Portfolio](https://socialify.git.ci/AgusCarretto/portfolio/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Circuit%20Board&theme=Dark)
-
 > Repositorio oficial de mi portfolio personal. Una aplicación web moderna diseñada para exhibir mis proyectos, habilidades y experiencia como desarrollador Full Stack.
 
 [![Live Demo](https://img.shields.io/badge/Ver_Portfolio_Online-0F172A?style=for-the-badge&logo=vercel&logoColor=white)](https://agustincarretto.com)
