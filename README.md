@@ -1,16 +1,40 @@
-# React + Vite
+# 👨‍💻 Agustín Carretto - Portfolio Profesional
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Repositorio oficial de mi portfolio personal. Una aplicación web moderna diseñada para exhibir mis proyectos, habilidades y experiencia como desarrollador Full Stack.
 
-Currently, two official plugins are available:
+[![Live Demo](https://img.shields.io/badge/Ver_Portfolio_Online-0F172A?style=for-the-badge&logo=vercel&logoColor=white)](https://agustincarretto.com)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ⚡ Sobre el Proyecto
 
-## React Compiler
+Este portfolio fue construido con un enfoque **Performance-First**. No es solo una landing page estática, es una **Single Page Application (SPA)** escalable que utiliza enrutamiento dinámico para gestionar los detalles de cada proyecto sin recargas innecesarias.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+El objetivo fue crear una experiencia de usuario fluida (UX), con animaciones sutiles y una arquitectura de código limpia que permita agregar nuevos proyectos fácilmente a través de archivos de datos centralizados.
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+El sitio está construido sobre un stack moderno para asegurar velocidad y mantenibilidad:
+
+* ![React](https://img.shields.io/badge/-React-black?style=flat-square&logo=react) **React 18** - Biblioteca de UI.
+* ![Vite](https://img.shields.io/badge/-Vite-646CFF?style=flat-square&logo=vite&logoColor=white) **Vite** - Bundler de última generación.
+* ![Tailwind CSS](https://img.shields.io/badge/-Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white) **Tailwind CSS** - Estilizado utilitario y Responsive Design.
+* ![React Router](https://img.shields.io/badge/-React_Router-CA4245?style=flat-square&logo=react-router&logoColor=white) **React Router Dom** - Navegación dinámica SPA.
+* ![Swiper](https://img.shields.io/badge/-Swiper_JS-6332F6?style=flat-square&logo=swiper&logoColor=white) **Swiper JS** - Carruseles táctiles interactivos.
+* ![Lucide](https://img.shields.io/badge/-Lucide_Icons-F05032?style=flat-square) **Lucide React** - Iconografía ligera.
+
+## ✨ Características Destacadas
+
+* **Arquitectura de Datos Separada:** Los proyectos no están "harcodeados" en el HTML. Se cargan desde un archivo `projectData.js`, lo que facilita la escalabilidad y el mantenimiento.
+* **Diseño 100% Responsive:** Optimizado para móviles, tablets y desktops grandes, con grillas adaptables.
+* **Enrutamiento Dinámico:** Sistema de rutas `/proyecto/:id` que genera páginas de detalle muy rapidas.
+* **Lightbox Nativo:** Galería de imágenes personalizada con soporte para navegación por teclado y Swipe para celulares.
+
+## 📂 Estructura del Proyecto
+
+El código sigue una organización modular para facilitar la lectura:
+
+```text
+src/
+├── components/    # Piezas reusables (Navbar, Cards, Modals)
+├── pages/         # Vistas principales (Home, ProjectDetail)
+├── data/          # Lógica de datos (JSON de proyectos)
+└── assets/        # Recursos optimizados (Imagenes)
