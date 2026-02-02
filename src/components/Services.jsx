@@ -1,43 +1,45 @@
 import React, { useState } from 'react';
 import { FiLayout, FiSmartphone, FiDatabase, FiCheck } from 'react-icons/fi';
-
-const services = [
-  {
-    id: 0,
-    title: "Landing Page",
-    price: "150",
-    description: "Ideal para captar clientes rápidamente con una oferta específica.",
-    features: ["Diseño 100% Responsive", "Optimización SEO básica", "Botón de WhatsApp directo", "Carga ultra rápida"],
-    icon: <FiSmartphone className="text-3xl" />
-  },
-  {
-    id: 1,
-    title: "Business Web",
-    price: "450",
-    description: "Tu empresa al siguiente nivel con presencia profesional y datos reales.",
-    features: ["Hasta 5 secciones", "Google Analytics integrado", "Formularios de contacto", "Velocidad de carga Premium"],
-    icon: <FiLayout className="text-3xl" />,
-    popular: true // La etiqueta de texto se queda fija aquí
-  },
-  {
-    id: 2,
-    title: "Custom App / Sistema",
-    price: "1300",
-    description: "Soluciones a medida para automatizar y gestionar tu negocio.",
-    features: ["Base de datos en tiempo real", "Gestión de usuarios / Login", "Panel de administración", "Soporte técnico prioritario"],
-    icon: <FiDatabase className="text-3xl" />
-  }
-];
+import { useTranslation } from "react-i18next"; // 1. IMPORTAR
 
 export const Services = () => {
-  // Empezamos con el plan del medio (id: 1) como activo
+  const { t } = useTranslation(); // 2. INICIALIZAR
   const [activeId, setActiveId] = useState(1);
+
+  // 3. DEFINIMOS LOS DATOS ADENTRO PARA USAR LA TRADUCCIÓN
+  const services = [
+    {
+      id: 0,
+      title: t('services.plans.0.title'),
+      price: "150",
+      description: t('services.plans.0.desc'),
+      features: t('services.plans.0.features', { returnObjects: true }), // <--- TRUCO PARA TRAER EL ARRAY
+      icon: <FiSmartphone className="text-3xl" />
+    },
+    {
+      id: 1,
+      title: t('services.plans.1.title'),
+      price: "450",
+      description: t('services.plans.1.desc'),
+      features: t('services.plans.1.features', { returnObjects: true }),
+      icon: <FiLayout className="text-3xl" />,
+      popular: true
+    },
+    {
+      id: 2,
+      title: t('services.plans.2.title'),
+      price: "1300",
+      description: t('services.plans.2.desc'),
+      features: t('services.plans.2.features', { returnObjects: true }),
+      icon: <FiDatabase className="text-3xl" />
+    }
+  ];
 
   return (
     <section id="servicios" className="py-24 max-w-6xl mx-auto px-6">
       <div className="text-center mb-16">
         <h2 className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent inline-block">
-          Servicios y Soluciones
+          {t('services.title')}
         </h2>
       </div>
 
@@ -55,10 +57,10 @@ export const Services = () => {
                 : 'bg-slate-900/40 border-slate-800 hover:border-slate-700'
               }`}
             >
-              {/* Etiqueta fija en el plan del medio */}
+              {/* ETIQUETA POPULAR TRADUCIDA */}
               {service.popular && (
                 <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-cyan-500 text-slate-950 text-[9px] font-black px-3 py-1 rounded-full uppercase tracking-tighter shadow-lg">
-                  Más Popular
+                  {t('services.popular_tag')}
                 </span>
               )}
 
@@ -71,7 +73,7 @@ export const Services = () => {
               </h3>
               
               <div className="flex items-baseline gap-1 mb-4">
-                <span className="text-slate-500 text-xs">Desde</span>
+                <span className="text-slate-500 text-xs">{t('services.from')}</span>
                 <span className={`text-3xl font-bold transition-colors ${isActive ? 'text-white' : 'text-slate-500'}`}>
                   USD {service.price}
                 </span>
@@ -98,7 +100,7 @@ export const Services = () => {
                   : 'bg-slate-800 text-slate-400'
                 }`}
               >
-                Consultar Plan
+                {t('services.btn_consult')}
               </a>
             </div>
           );

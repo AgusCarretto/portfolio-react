@@ -1,67 +1,63 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
 import imagenMe from "../assets/me-photo.jpg";
+import { useTranslation } from 'react-i18next';
 
 export const Hero = () => {
+  const { t } = useTranslation();
+  const typewriterStrings = t('hero.typewriter', { returnObjects: true });
+
+
   return (
     <section
       id="inicio"
       className="h-screen w-full flex flex-col justify-center relative bg-slate-950"
     >
       <div className="max-w-6xl mx-auto px-6 w-full grid grid-cols-1 md:grid-cols-2 items-center gap-12">
-        {/* COLUMNA IZQUIERDA (Tu texto actual) */}
         <div>
-          {/* Disponibilidad */}
 
-          {/* Titular con Typewriter */}
           <h1 className="text-5xl md:text-7xl font-bold tracking-tighter leading-tight mb-6">
-            <span className="text-white">Desarrollador </span>
+            <span className="text-white">{t('hero.role_label')} </span>
             <span className="text-cyan-400 block md:inline">
               <Typewriter
-                options={{
-                  strings: ["Fullstack", "React", ".NET", "Freelance"],
-                  autoStart: true,
-                  loop: true,
-                  deleteSpeed: 50,
-                }}
-              />
+                  key={typewriterStrings.join(',')} 
+                  options={{
+                    strings: typewriterStrings, 
+                    autoStart: true,
+                    loop: true,
+                    deleteSpeed: 50,
+                  }}
+                />
             </span>
           </h1>
 
           <p className="text-lg text-slate-400 max-w-2xl leading-relaxed mb-10">
-            Hola, soy{" "}
-            <span className="text-white font-medium">Agustín Carretto</span>. Me
-            especializo en construir aplicaciones web robustas y escalables
-            desde Uruguay, enfocándome en la experiencia del usuario y el
-            cleanCode.
+            {t('hero.intro')}{" "}
+            <span className="text-white font-medium">Agustín Carretto</span>{t('hero.bio')}
           </p>
 
-          {/* Botones de acción */}
           <div className="flex gap-4">
             <a
               href="#proyectos"
               className="px-8 py-4 bg-white text-slate-950 font-bold rounded-xl hover:bg-cyan-400 transition-all duration-300"
             >
-              Ver Proyectos
+              {t('hero.btn_projects')}
             </a>
             <a
               href="#contacto"
               className="px-8 py-4 border border-slate-800 text-slate-300 font-bold rounded-xl hover:bg-slate-900 transition-all duration-300"
             >
-              Contactar
+              {t('hero.btn_contact')}
             </a>
           </div>
 
         </div>
 
-        {/* COLUMNA DERECHA: La Card de CV / Perfil */}
 
         <div className="hidden md:flex justify-center items-center">
           <div className="relative group">
-            {/* Brillo de fondo */}
             <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
 
-            {/* La Card */}
             <div className="relative bg-slate-900 border border-slate-800 p-8 rounded-2xl w-90 shadow-2xl">
               <div className="flex flex-col items-center text-center">
                 <div className="w-30 h-30 bg-slate-800 rounded-full mb-4 flex items-center justify-center border-2 border-cyan-500/30 overflow-hidden">
@@ -79,16 +75,15 @@ export const Hero = () => {
                   Fullstack Developer
                 </p>
 
-                {/* Cambia esta parte en tu columna derecha */}
                 <div className="space-y-3 w-full">
                   <a
                     href="/Agustin_Carretto_CV.pdf" 
                     download="Agustin_Carretto_CV.pdf" 
                     className="flex items-center justify-center gap-2 w-full py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-xl transition-all border border-slate-700 cursor-pointer active:scale-95"
                   >
-                    <span className="font-bold text-sm">Descargar CV</span>
+                    <span className="font-bold text-sm">{t('hero.card_cv')}</span>
                     <svg
-                      className="w-4 h-4 text-cyan-400" // Le puse un toquecito de color al icono
+                      className="w-4 h-4 text-cyan-400"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -107,7 +102,7 @@ export const Hero = () => {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
                   </span>
-                  Disponible para nuevos desafíos
+                  {t('hero.status')}
                 </div>
               </div>
             </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation, Trans } from "react-i18next";
 // Usamos solo Font Awesome 6 (fa6) para evitar conflictos de módulos
 import { 
   FaDatabase, 
@@ -10,6 +11,9 @@ import {
 } from 'react-icons/fa6';
 
 export const About = () => {
+
+  const { t } = useTranslation();
+
   const skills = [
     { 
       name: "C# / .NET", 
@@ -50,17 +54,28 @@ export const About = () => {
         {/* TEXTO IZQUIERDA */}
         <div>
           <h2 className="text-4xl font-bold text-white mb-6">
-            Un poco <span className="text-cyan-400">sobre mí</span>
+            {t('about.title_1')} <span className="text-cyan-400">{t('about.title_2')}</span>
           </h2>
           <div className="space-y-4 text-slate-400 leading-relaxed">
             <p>
-              Soy un apasionado por resolver problemas mediante el código. Mi enfoque principal es construir aplicaciones que no solo se vean bien, sino que sean escalables y eficientes.
+              {t('about.p1')}
             </p>
             <p>
-              Me especializo en el ecosistema <span className="text-white font-medium">.NET</span> para el desarrollo de Backend sólido con arquitecturas MVC y Web APIs, complementándolo con el poder de <span className="text-white font-medium">React</span> para interfaces modernas.
+             <Trans
+                i18nKey="about.p2"
+                components={[
+                  <span className="text-white font-medium" key="0" />, 
+                  <span className="text-white font-medium" key="1" />  
+                ]}
+              />
             </p>
             <p>
-              Manejo bases de datos relacionales como <span className="text-white font-medium">SQL Server</span>, enfocándome en el diseño de esquemas robustos para garantizar la integridad de la información.
+             <Trans
+                i18nKey="about.p3"
+                components={[
+                  <span className="text-white font-medium" key="0" /> 
+                ]}
+              />
             </p>
           </div>
         </div>
